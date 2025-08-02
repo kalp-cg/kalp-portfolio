@@ -164,4 +164,3 @@ temp/
 *.local
 
 # Source folder - excluded for selective commits
-src/

@@ -41,7 +41,7 @@ const PageLoader = ({ message = 'Loading' }) => {
           />
           <motion.div 
             className="absolute inset-4 rounded-full border-b-4 border-primary/50"
-            initial={{ rotate: 0 }}
+            initial={{ rotate: 0  }}
             animate={{ rotate: 360 }}
             transition={{ duration: 2.5, ease: "linear", repeat: Infinity }}
           />

@@ -67,6 +67,15 @@ const ClicksPage = () => {
       category: 'Desert',
       image: 'https://res.cloudinary.com/demtjxg7q/image/upload/v1753518177/IMG_20250609_100248-EDIT_bv3suj.jpg',
       description: 'The golden sand dunes of the desert during sunset. The shadows and light created fascinating patterns across the landscape.'
+    },
+     {
+      id: 7,
+      title: 'Desert Sunset Dunes',
+      date: '8 October, 2021',
+      location: 'Golden Desert',
+      category: 'Desert',
+      image: 'https://res.cloudinary.com/demtjxg7q/image/upload/v1753520504/nature.jpg_1_fttbex.jpg',
+      description: 'The golden sand dunes of the desert during sunset. The shadows and light created fascinating patterns across the landscape.'
     }
   ];
 

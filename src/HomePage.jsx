@@ -163,8 +163,7 @@ const HomePage = ({ setActivePage }) => {
             variants={itemVariants}
             className={`text-lg mb-8 max-w-2xl ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}
           >
-            I'm a Tunisian based web designer & front‑end developer passionate about creating intuitive, 
-            immersive digital experiences that solve real problems and delight users.
+           "I'm a web designer and front-end developer focused on building clean, modern, and user-friendly interfaces that bring ideas to life and make an impact."
           </motion.p>
           
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
@@ -200,7 +199,7 @@ const HomePage = ({ setActivePage }) => {
             <div className="w-full h-full rounded-full bg-primary/20 overflow-hidden flex items-center justify-center">
               <div className="w-[90%] h-[90%] rounded-full bg-primary/30 flex items-center justify-center">
                 <div className="w-[85%] h-[85%] rounded-full bg-gray-200 overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
-                  {/* Replace with actual profile image when available */}
+                  <img src="https://res.cloudinary.com/dhyds3low/image/upload/v1756541323/file_00000000f8cc62439b42c2e0a5758ffa_ll4x87.png" alt="" />
                   <div className="w-full h-full bg-gradient-to-br from-primary/60 to-blue-400/60"></div>
                 </div>
               </div>

@@ -9,17 +9,24 @@ const Education = ({ isResumePage = false }) => {
   const educations = [
     {
       id: 1,
-      period: '2023 - Present',
+      period: '2024 - Present',
       degree: "Bachelor's Degree in Computer Science",
-      institution: 'Your University Name',
-      description: 'Currently pursuing Computer Science degree. Learning programming fundamentals, data structures, algorithms, and software development practices.'
+      institution: 'Rai university x Coding gita',
+      description: 'Currently pursuing Computer Science degree. Learning programming fundamentals, data structures, algorithms, and web development practices.'
     },
     {
       id: 2,
-      period: '2021 - 2023',
-      degree: 'High School Diploma',
-      institution: 'Your High School Name',
+      period: '2022 - 2024',
+      degree: 'HSC Board',
+      institution: 'Shree Ram Vidhyalaya',
       description: 'Completed high school education with focus on mathematics and science subjects.'
+    },
+    {
+      id: 3,
+      period: '2021 - 2022',
+      degree: 'SSC Board',
+      institution: 'Navjivan Vidhyalaya',
+      description: 'Completed Secondary School Certificate (SSC) education under Gujarat Board with a focus on Mathematics and Science subjects.'
     }
   ];
 

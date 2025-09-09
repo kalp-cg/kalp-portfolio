@@ -37,7 +37,7 @@ const ProjectsPage = () => {
       title: 'Weather Dashboard',
       category: 'web',
       image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500&h=300&fit=crop',
-      link: 'https://your-weather-app.herokuapp.com',
+      link: 'https://odoo-hackathone-round2.vercel.app/',
       description: 'Real-time weather application with location-based forecasts'
     },
     {
@@ -45,7 +45,7 @@ const ProjectsPage = () => {
       title: 'Portfolio Website',
       category: 'web',
       image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop',
-      link: 'https://your-portfolio.vercel.app',
+      link: 'https://simple-timer-7v03knwx2-kalp-cgs-projects.vercel.app/',
       description: 'Personal portfolio website built with React and Tailwind CSS'
     },
     {
@@ -53,7 +53,7 @@ const ProjectsPage = () => {
       title: 'Fitness Tracker',
       category: 'mobile',
       image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop',
-      link: 'https://your-fitness-app.expo.dev',
+      link: 'https://tranquil-kheer-38144e.netlify.app/',
       description: 'React Native mobile app for tracking workouts and nutrition'
     },
     {
@@ -61,7 +61,39 @@ const ProjectsPage = () => {
       title: 'UI Design System',
       category: 'ui',
       image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop',
-      link: 'https://your-design-system.figma.com',
+      link: 'https://heartfelt-bombolone-ca6190.netlify.app/',
+      description: 'Comprehensive UI design system with reusable components'
+    },
+    {
+      id: 7,
+      title: 'UI Design System',
+      category: 'ui',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop',
+      link: 'https://chess-html-css-javascript.netlify.app/',
+      description: 'Comprehensive UI design system with reusable components'
+    },
+    {
+      id: 8,
+      title: 'UI Design System',
+      category: 'ui',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop',
+      link: 'https://heartfelt-bombolone-ca6190.netlify.app/',
+      description: 'Comprehensive UI design system with reusable components'
+    },
+    {
+      id: 9,
+      title: 'UI Design System',
+      category: 'ui',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop',
+      link: 'https://heartfelt-bombolone-ca6190.netlify.app/',
+      description: 'Comprehensive UI design system with reusable components'
+    },
+    {
+      id: 10,
+      title: 'UI Design System',
+      category: 'ui',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop',
+      link: 'https://heartfelt-bombolone-ca6190.netlify.app/',
       description: 'Comprehensive UI design system with reusable components'
     }
   ];

@@ -1,14 +1,15 @@
+// Sidebar.jsx
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaHome, FaUser, FaGraduationCap, FaBriefcase, FaEnvelope, FaRss, FaGithub, FaLinkedin,  FaTwitter } from 'react-icons/fa';
+import { FaHome, FaUser, FaGraduationCap, FaBriefcase, FaEnvelope, FaRss, FaGithub, FaLinkedin, FaTwitter, FaCode } from 'react-icons/fa';
 import { useTheme } from './context/ThemeContext';
 import Logo from './components/shared/Logo';
 
 const Sidebar = ({ isMobileNavOpen, setIsMobileNavOpen, handleNavigation }) => {
   const { theme } = useTheme();
   const location = useLocation();
-  
+
   const menuItems = [
     { path: '/', icon: <FaHome />, text: 'HOME' },
     { path: '/about', icon: <FaUser />, text: 'ABOUT' },
@@ -17,35 +18,37 @@ const Sidebar = ({ isMobileNavOpen, setIsMobileNavOpen, handleNavigation }) => {
     { path: '/clicks', icon: <FaRss />, text: 'CLICKS' },
     { path: '/contact', icon: <FaEnvelope />, text: 'CONTACT' },
   ];
-  
+
   const socialLinks = [
     { icon: <FaGithub />, url: 'https://github.com/kalp-cg', label: 'GitHub' },
     { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/kalp-patel-/', label: 'LinkedIn' },
+    { icon: <FaCode />, url: 'https://leetcode.com/u/kalp-cg/', label: 'LeetCode' },
     { icon: <FaTwitter />, url: 'https://x.com/patel_kalp92111', label: 'Twitter' },
   ];
 
-  
   const sidebarVariants = {
-    hidden: { x: '-100%' },
+    hidden: { x: '-100%', opacity: 0 },
     visible: { 
       x: 0,
+      opacity: 1,
       transition: { 
         type: 'spring', 
         stiffness: 300, 
         damping: 30,
-        when: "beforeChildren",
-        staggerChildren: 0.1
-      }
+        when: 'beforeChildren',
+        staggerChildren: 0.1,
+      },
     },
+    exit: { x: '-100%', opacity: 0, transition: { duration: 0.3 } },
   };
-  
+
   const childVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: { 
       opacity: 1, 
       x: 0,
-      transition: { type: 'spring', stiffness: 300 }
-    }
+      transition: { type: 'spring', stiffness: 300, duration: 0.3 },
+    },
   };
 
   const menuItemVariants = {
@@ -53,16 +56,16 @@ const Sidebar = ({ isMobileNavOpen, setIsMobileNavOpen, handleNavigation }) => {
       scale: 1.05,
       x: 8,
       color: 'var(--color-primary)',
-      transition: { type: 'spring', stiffness: 400, damping: 10 }
-    }
+      transition: { type: 'spring', stiffness: 400, damping: 10 },
+    },
   };
-  
+
   const socialIconVariants = {
     hover: { 
       scale: 1.2,
       color: 'var(--color-primary)',
-      transition: { type: 'spring', stiffness: 400, damping: 10 }
-    }
+      transition: { type: 'spring', stiffness: 400, damping: 10 },
+    },
   };
 
   return (
@@ -71,8 +74,9 @@ const Sidebar = ({ isMobileNavOpen, setIsMobileNavOpen, handleNavigation }) => {
       <motion.aside
         initial="hidden"
         animate="visible"
+        exit="exit"
         variants={sidebarVariants}
-        className={`fixed top-0 left-0 w-20 lg:w-72 h-full z-30 hidden md:flex flex-col 
+        className={`fixed top-0 left-0 w-20 lg:w-72 h-full z-[100] hidden md:flex flex-col will-change-transform
           ${theme === 'dark' 
             ? 'bg-gray-900 border-r border-gray-800' 
             : 'bg-white shadow-lg border-r border-gray-100'}`}
@@ -167,7 +171,7 @@ const Sidebar = ({ isMobileNavOpen, setIsMobileNavOpen, handleNavigation }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: isMobileNavOpen ? 0.7 : 0 }}
         transition={{ duration: 0.3 }}
-        className={`fixed inset-0 bg-black z-40 backdrop-blur-sm ${isMobileNavOpen ? 'block' : 'pointer-events-none'}`}
+        className={`fixed inset-0 bg-black z-[90] backdrop-blur-sm ${isMobileNavOpen ? 'block pointer-events-auto' : 'pointer-events-none'}`}
         onClick={() => setIsMobileNavOpen(false)}
       ></motion.div>
       
@@ -176,10 +180,11 @@ const Sidebar = ({ isMobileNavOpen, setIsMobileNavOpen, handleNavigation }) => {
         initial={{ x: '-100%', opacity: 0 }}
         animate={{ 
           x: isMobileNavOpen ? 0 : '-100%',
-          opacity: isMobileNavOpen ? 1 : 0
+          opacity: isMobileNavOpen ? 1 : 0,
         }}
-        transition={{ type: 'spring', damping: 25 }}
-        className={`fixed top-0 left-0 w-72 h-full z-50 overflow-y-auto
+        exit={{ x: '-100%', opacity: 0 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+        className={`fixed top-0 left-0 w-72 h-full z-[110] overflow-y-auto will-change-transform
           ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'} shadow-2xl md:hidden`}
       >
         <div className="flex flex-col h-full">

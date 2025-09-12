@@ -16,7 +16,6 @@ import ProjectsPage from './ProjectsPage';
 import ClicksPage from './ClicksPage';
 import ContactPage from './ContactPage';
 
-// ScrollToTop component for route changes
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   
@@ -83,22 +82,20 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <div className="flex flex-col md:flex-row min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-          {/* Sidebar */}
+    
           <Sidebar 
             isMobileNavOpen={isMobileNavOpen} 
             setIsMobileNavOpen={setIsMobileNavOpen}
             handleNavigation={handleNavigation}
           />
-          
-          {/* Main Content */}
+   
           <div className="flex-1 flex flex-col w-full md:ml-20 lg:ml-72 transition-all duration-300 relative">
-            {/* Header */}
+
             <Header 
               isMobileNavOpen={isMobileNavOpen}
               setIsMobileNavOpen={setIsMobileNavOpen}
             />
             
-            {/* Main Content Area */}
             <main className="flex-1">
               <AnimatePresence mode="wait">
                 <Routes>
@@ -113,9 +110,6 @@ function App() {
               </AnimatePresence>
             </main>
             
-
-            
-            {/* Footer - only on specific pages */}
             <footer className="text-center py-4 text-sm text-gray-500 dark:text-gray-400 mt-auto">
               © {new Date().getFullYear()} Portfolio. All rights reserved.
             </footer>

@@ -8,12 +8,12 @@ import ResumeButton from './components/shared/ResumeButton';
 
 const AboutPage = () => {
   const { theme } = useTheme();
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         duration: 0.6,
         when: "beforeChildren",
         staggerChildren: 0.2
@@ -23,8 +23,8 @@ const AboutPage = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.6 }
     }
@@ -49,35 +49,42 @@ const AboutPage = () => {
             </span>
           </div>
         </motion.div>
-        
+
         {/* About Me Section */}
         <motion.div variants={itemVariants} className="mb-16">
           <h3 className={`text-2xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>
-            I'm Kalp Patel and <span className="text-primary">Web Developer</span>
+            I'm Kalp Patel, a <span className="text-primary">Web Developer</span> and Tech Enthusiast
           </h3>
-          
+
           <p className={`mb-4 ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
-            I'm a web designer and developer based in Tunisia with a passion for creating user-friendly, accessible, and responsive websites. 
-            I'm very passionate about the work that I do, and always eager to connect with other creative professionals.
+            I'm a Computer Science student and passionate web developer from India. I enjoy building
+            scalable applications and crafting intuitive user experiences with technologies like React,
+            Node.js, and MongoDB.
           </p>
-          
+
+          <p className={`mb-4 ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
+            My current focus is on mastering state management, advanced MongoDB queries, and full-stack
+            deployment practices. I also explore UI/UX design, using tools like Figma and Tailwind CSS
+            to create clean and user-friendly interfaces.
+          </p>
+
           <p className={`mb-8 ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
-            I have been developing websites since 2016, including frontend and backend development. 
-            I have a wide range of skills in web design, web development, mobile app development, and desktop application development.
+            Beyond coding, I’m a national-level <span className="text-primary font-semibold">discus throw athlete</span>,
+            which has taught me discipline, resilience, and how to thrive under pressure—qualities I carry into my tech journey.
           </p>
-          
+
           <PersonalInfo />
-          
+
           <div className="mt-8">
             <ResumeButton />
           </div>
         </motion.div>
-        
+
         {/* Skills Section */}
         <motion.div variants={itemVariants} className="mb-16">
           <Skills />
         </motion.div>
-        
+
         {/* Education Section */}
         <motion.div variants={itemVariants} className="mb-8">
           <Education />

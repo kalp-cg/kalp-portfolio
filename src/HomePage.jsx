@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaGithub, FaLinkedin, FaTwitter, FaCode } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useTheme } from './context/ThemeContext';
 
 const HomePage = ({ setActivePage }) => {
   const { theme } = useTheme();
   const [currentRole, setCurrentRole] = useState(0);
-  
-  const roles = ['UI/UX Designer', 'Web Developer'];
-  
+
+  const roles = ['MERN Stack Developer', 'UI/UX Enthusiast'];
+
   // Alternating text effect
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole(prev => (prev + 1) % roles.length);
-    }, 3000); // Change every 3 seconds
-    
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         duration: 0.8,
         when: "beforeChildren",
         staggerChildren: 0.2
@@ -33,24 +32,10 @@ const HomePage = ({ setActivePage }) => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.8, ease: "easeOut" }
-    }
-  };
-
-  const socialIconVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.5 }
-    },
-    hover: { 
-      scale: 1.2,
-      color: 'var(--color-primary)',
-      transition: { type: 'spring', stiffness: 400, damping: 10 }
     }
   };
 
@@ -67,26 +52,26 @@ const HomePage = ({ setActivePage }) => {
       className="w-full min-h-[calc(100vh-65px)] flex flex-col lg:flex-row items-center justify-center relative overflow-hidden"
     >
       {/* Background elements */}
-      <motion.div 
-        variants={backgroundCircleVariants} 
+      <motion.div
+        variants={backgroundCircleVariants}
         className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary opacity-5 hidden md:block"
       />
-      <motion.div 
-        variants={backgroundCircleVariants} 
+      <motion.div
+        variants={backgroundCircleVariants}
         className="absolute bottom-20 -left-20 w-64 h-64 rounded-full bg-primary opacity-5 hidden md:block"
       />
-      
+
       {/* Main content */}
       <div className="max-w-7xl w-full px-6 sm:px-10 py-10 flex flex-col lg:flex-row items-center justify-between gap-10">
         <div className="w-full lg:w-1/2">
-          <motion.span 
+          <motion.span
             variants={itemVariants}
             className="inline-block text-primary text-lg font-medium mb-4 border-b-2 border-primary pb-1"
           >
             WELCOME TO MY WORLD
           </motion.span>
-          
-          <motion.h1 
+
+          <motion.h1
             variants={itemVariants}
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight"
           >
@@ -108,14 +93,14 @@ const HomePage = ({ setActivePage }) => {
               </span>
             </span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             variants={itemVariants}
-            className={`font-text-lg mb-8 max-w-2xl ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}
+            className={`text-lg mb-8 max-w-2xl ${theme === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}
           >
-           "I'm a web designer and front-end developer focused on building clean, modern, and user-friendly interfaces that bring ideas to life and make an impact."
+            I build clean, scalable, and user-friendly web applications with a focus on modern design and real-world impact.
           </motion.p>
-          
+
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
             <Link to="/about">
               <motion.button
@@ -126,7 +111,7 @@ const HomePage = ({ setActivePage }) => {
                 EXPLORE MY WORK <FaArrowRight className="ml-2" />
               </motion.button>
             </Link>
-            
+
             <Link to="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -138,8 +123,9 @@ const HomePage = ({ setActivePage }) => {
             </Link>
           </motion.div>
         </div>
-        
-        <motion.div 
+
+        {/* Profile Image */}
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -149,14 +135,17 @@ const HomePage = ({ setActivePage }) => {
             <div className="w-full h-full rounded-full bg-primary/20 overflow-hidden flex items-center justify-center">
               <div className="w-[90%] h-[90%] rounded-full bg-primary/30 flex items-center justify-center">
                 <div className="w-[85%] h-[85%] rounded-full bg-gray-200 overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
-                  <img src="https://res.cloudinary.com/dhyds3low/image/upload/v1756541323/file_00000000f8cc62439b42c2e0a5758ffa_ll4x87.png" alt="" />
+                  <img
+                    src="https://res.cloudinary.com/dhyds3low/image/upload/v1756541323/file_00000000f8cc62439b42c2e0a5758ffa_ll4x87.png"
+                    alt="Profile"
+                  />
                   <div className="w-full h-full bg-gradient-to-br from-primary/60 to-blue-400/60"></div>
                 </div>
               </div>
             </div>
-            
+
             {/* Experience badge */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.5 }}
@@ -168,22 +157,6 @@ const HomePage = ({ setActivePage }) => {
           </div>
         </motion.div>
       </div>
-      
-      <motion.div 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
-        className="hidden lg:flex flex-col items-center absolute bottom-10 left-1/2 transform -translate-x-1/2"
-      >
-        <span className={`text-xs mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>SCROLL DOWN</span>
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="w-5 h-8 border-2 border-primary rounded-full flex items-start justify-center p-1"
-        >
-          <div className="w-1 h-1 rounded-full bg-primary"></div>
-        </motion.div>
-      </motion.div>
     </motion.div>
   );
 };

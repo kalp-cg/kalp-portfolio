@@ -176,7 +176,6 @@ const Certificates = ({ isResumePage = false }) => {
     </motion.div>
   );
 
-  // About page style timeline item
   const CompactTimelineItem = ({ cert }) => (
     <motion.div 
       variants={itemVariants}
@@ -211,7 +210,6 @@ const Certificates = ({ isResumePage = false }) => {
     </motion.div>
   );
 
-  // For Resume page
   if (isResumePage) {
     // Group certificates by platform
     const groupedCertificates = certificates.reduce((acc, cert) => {

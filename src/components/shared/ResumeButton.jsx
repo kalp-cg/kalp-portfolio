@@ -8,7 +8,7 @@ const ResumeButton = ({ className = '' }) => {
   
   return (
     <motion.a
-      href="/resume.pdf"
+      href="https://drive.google.com/file/d/1B1GL7eVZ_NaaZ7cA-j01znxR2crmtDK7/view?usp=sharing"
       download
       className={`inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white font-medium transition-all hover:bg-primary-dark ${className}`}
       whileHover={{ scale: 1.05 }}
